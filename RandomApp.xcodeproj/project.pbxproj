@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37A3AEE02A73A31A0084542F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEDF2A73A31A0084542F /* MainViewModel.swift */; };
+		37A3AEE32A73A79B0084542F /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEE22A73A79B0084542F /* Dog.swift */; };
+		37A3AEE52A73B9690084542F /* RandomDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEE42A73B9690084542F /* RandomDogView.swift */; };
+		37A3AEE72A73B99E0084542F /* RandomDogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEE62A73B99E0084542F /* RandomDogViewModel.swift */; };
 		37DC16932A73960F00319EB8 /* RandomAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DC16922A73960F00319EB8 /* RandomAppApp.swift */; };
 		37DC16952A73960F00319EB8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DC16942A73960F00319EB8 /* MainView.swift */; };
 		37DC16972A73961200319EB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37DC16962A73961200319EB8 /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37A3AEDF2A73A31A0084542F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		37A3AEE22A73A79B0084542F /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dog.swift; path = ../../../../../Dog.swift; sourceTree = "<group>"; };
+		37A3AEE42A73B9690084542F /* RandomDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomDogView.swift; path = ../../../../../RandomDogView.swift; sourceTree = "<group>"; };
+		37A3AEE62A73B99E0084542F /* RandomDogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomDogViewModel.swift; path = ../../../../../RandomDogViewModel.swift; sourceTree = "<group>"; };
 		37DC168F2A73960F00319EB8 /* RandomApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DC16922A73960F00319EB8 /* RandomAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAppApp.swift; sourceTree = "<group>"; };
 		37DC16942A73960F00319EB8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -32,6 +40,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37A3AEDE2A73A30C0084542F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37A3AEDF2A73A31A0084542F /* MainViewModel.swift */,
+				37A3AEE62A73B99E0084542F /* RandomDogViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		37A3AEE12A73A7010084542F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37A3AEE22A73A79B0084542F /* Dog.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		37DC16862A73960F00319EB8 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				37DC16922A73960F00319EB8 /* RandomAppApp.swift */,
+				37A3AEDE2A73A30C0084542F /* ViewModel */,
 				37DC16A02A73969600319EB8 /* View */,
+				37A3AEE12A73A7010084542F /* Model */,
 				37DC16962A73961200319EB8 /* Assets.xcassets */,
 				37DC16982A73961200319EB8 /* Preview Content */,
 			);
@@ -71,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				37DC16942A73960F00319EB8 /* MainView.swift */,
+				37A3AEE42A73B9690084542F /* RandomDogView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,7 +174,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				37DC16952A73960F00319EB8 /* MainView.swift in Sources */,
+				37A3AEE32A73A79B0084542F /* Dog.swift in Sources */,
+				37A3AEE02A73A31A0084542F /* MainViewModel.swift in Sources */,
 				37DC16932A73960F00319EB8 /* RandomAppApp.swift in Sources */,
+				37A3AEE72A73B99E0084542F /* RandomDogViewModel.swift in Sources */,
+				37A3AEE52A73B9690084542F /* RandomDogView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
