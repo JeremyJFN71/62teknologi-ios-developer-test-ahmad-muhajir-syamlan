@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		376C66F22A73EB520029824B /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C66F12A73EB520029824B /* Joke.swift */; };
+		376C66F42A73EBB70029824B /* RandomJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C66F32A73EBB70029824B /* RandomJokeView.swift */; };
+		376C66F62A73EBD00029824B /* RandomJokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C66F52A73EBD00029824B /* RandomJokeViewModel.swift */; };
 		37A3AEE02A73A31A0084542F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEDF2A73A31A0084542F /* MainViewModel.swift */; };
 		37A3AEE32A73A79B0084542F /* DogImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEE22A73A79B0084542F /* DogImage.swift */; };
 		37A3AEE52A73B9690084542F /* RandomDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEE42A73B9690084542F /* RandomDogView.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		376C66F12A73EB520029824B /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Joke.swift; path = ../../../../../Joke.swift; sourceTree = "<group>"; };
+		376C66F32A73EBB70029824B /* RandomJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomJokeView.swift; path = ../../../../../RandomJokeView.swift; sourceTree = "<group>"; };
+		376C66F52A73EBD00029824B /* RandomJokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomJokeViewModel.swift; path = ../../../../../RandomJokeViewModel.swift; sourceTree = "<group>"; };
 		37A3AEDF2A73A31A0084542F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		37A3AEE22A73A79B0084542F /* DogImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DogImage.swift; path = ../../../../../DogImage.swift; sourceTree = "<group>"; };
 		37A3AEE42A73B9690084542F /* RandomDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomDogView.swift; path = ../../../../../RandomDogView.swift; sourceTree = "<group>"; };
@@ -50,8 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				37A3AEDF2A73A31A0084542F /* MainViewModel.swift */,
-				37A3AEE62A73B99E0084542F /* RandomDogViewModel.swift */,
 				37A3AEEC2A73C9970084542F /* RandomCatViewModel.swift */,
+				37A3AEE62A73B99E0084542F /* RandomDogViewModel.swift */,
+				376C66F52A73EBD00029824B /* RandomJokeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -59,8 +66,9 @@
 		37A3AEE12A73A7010084542F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				37A3AEE22A73A79B0084542F /* DogImage.swift */,
 				37A3AEE82A73C7150084542F /* CatFact.swift */,
+				37A3AEE22A73A79B0084542F /* DogImage.swift */,
+				376C66F12A73EB520029824B /* Joke.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,8 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				37DC16942A73960F00319EB8 /* MainView.swift */,
-				37A3AEE42A73B9690084542F /* RandomDogView.swift */,
 				37A3AEEA2A73C9800084542F /* RandomCatView.swift */,
+				37A3AEE42A73B9690084542F /* RandomDogView.swift */,
+				376C66F32A73EBB70029824B /* RandomJokeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +197,9 @@
 				37A3AEE92A73C7150084542F /* CatFact.swift in Sources */,
 				37A3AEE02A73A31A0084542F /* MainViewModel.swift in Sources */,
 				37A3AEED2A73C9970084542F /* RandomCatViewModel.swift in Sources */,
+				376C66F62A73EBD00029824B /* RandomJokeViewModel.swift in Sources */,
+				376C66F22A73EB520029824B /* Joke.swift in Sources */,
+				376C66F42A73EBB70029824B /* RandomJokeView.swift in Sources */,
 				37DC16932A73960F00319EB8 /* RandomAppApp.swift in Sources */,
 				37A3AEE72A73B99E0084542F /* RandomDogViewModel.swift in Sources */,
 				37A3AEE52A73B9690084542F /* RandomDogView.swift in Sources */,

@@ -43,10 +43,11 @@ struct ButtonView: View {
 
     var body: some View {
         Text(text)
+            .fontWeight(.semibold)
             .padding(.vertical, 15)
             .foregroundColor(.white)
             .frame(width: 140)
-            .background(.blue)
+            .background(.brown)
             .cornerRadius(30)
     }
 }
@@ -65,7 +66,7 @@ struct OptionView: View {
             }
             
             HStack {
-                NavigationLink(destination: RandomDogView()) {
+                NavigationLink(destination: RandomJokeView()) {
                     ButtonView(text: "Jokes")
                 }
                 
