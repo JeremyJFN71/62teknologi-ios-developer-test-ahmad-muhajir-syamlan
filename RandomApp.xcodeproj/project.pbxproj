@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370C7A6E2A740A7E0053572A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370C7A6D2A740A7E0053572A /* User.swift */; };
 		376C66F22A73EB520029824B /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C66F12A73EB520029824B /* Joke.swift */; };
 		376C66F42A73EBB70029824B /* RandomJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C66F32A73EBB70029824B /* RandomJokeView.swift */; };
 		376C66F62A73EBD00029824B /* RandomJokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C66F52A73EBD00029824B /* RandomJokeViewModel.swift */; };
-		37A3AEE02A73A31A0084542F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEDF2A73A31A0084542F /* MainViewModel.swift */; };
 		37A3AEE32A73A79B0084542F /* DogImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEE22A73A79B0084542F /* DogImage.swift */; };
 		37A3AEE52A73B9690084542F /* RandomDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEE42A73B9690084542F /* RandomDogView.swift */; };
 		37A3AEE72A73B99E0084542F /* RandomDogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEE62A73B99E0084542F /* RandomDogViewModel.swift */; };
@@ -24,16 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		376C66F12A73EB520029824B /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Joke.swift; path = ../../../../../Joke.swift; sourceTree = "<group>"; };
-		376C66F32A73EBB70029824B /* RandomJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomJokeView.swift; path = ../../../../../RandomJokeView.swift; sourceTree = "<group>"; };
-		376C66F52A73EBD00029824B /* RandomJokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomJokeViewModel.swift; path = ../../../../../RandomJokeViewModel.swift; sourceTree = "<group>"; };
-		37A3AEDF2A73A31A0084542F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		37A3AEE22A73A79B0084542F /* DogImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DogImage.swift; path = ../../../../../DogImage.swift; sourceTree = "<group>"; };
-		37A3AEE42A73B9690084542F /* RandomDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomDogView.swift; path = ../../../../../RandomDogView.swift; sourceTree = "<group>"; };
-		37A3AEE62A73B99E0084542F /* RandomDogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomDogViewModel.swift; path = ../../../../../RandomDogViewModel.swift; sourceTree = "<group>"; };
-		37A3AEE82A73C7150084542F /* CatFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CatFact.swift; path = ../../../../../CatFact.swift; sourceTree = "<group>"; };
-		37A3AEEA2A73C9800084542F /* RandomCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomCatView.swift; path = ../../../../../RandomCatView.swift; sourceTree = "<group>"; };
-		37A3AEEC2A73C9970084542F /* RandomCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomCatViewModel.swift; path = ../../../../../RandomCatViewModel.swift; sourceTree = "<group>"; };
+		370C7A6D2A740A7E0053572A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		376C66F12A73EB520029824B /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		376C66F32A73EBB70029824B /* RandomJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeView.swift; sourceTree = "<group>"; };
+		376C66F52A73EBD00029824B /* RandomJokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeViewModel.swift; sourceTree = "<group>"; };
+		37A3AEE22A73A79B0084542F /* DogImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImage.swift; sourceTree = "<group>"; };
+		37A3AEE42A73B9690084542F /* RandomDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDogView.swift; sourceTree = "<group>"; };
+		37A3AEE62A73B99E0084542F /* RandomDogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDogViewModel.swift; sourceTree = "<group>"; };
+		37A3AEE82A73C7150084542F /* CatFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFact.swift; sourceTree = "<group>"; };
+		37A3AEEA2A73C9800084542F /* RandomCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCatView.swift; sourceTree = "<group>"; };
+		37A3AEEC2A73C9970084542F /* RandomCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCatViewModel.swift; sourceTree = "<group>"; };
 		37DC168F2A73960F00319EB8 /* RandomApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DC16922A73960F00319EB8 /* RandomAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAppApp.swift; sourceTree = "<group>"; };
 		37DC16942A73960F00319EB8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -55,7 +55,6 @@
 		37A3AEDE2A73A30C0084542F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				37A3AEDF2A73A31A0084542F /* MainViewModel.swift */,
 				37A3AEEC2A73C9970084542F /* RandomCatViewModel.swift */,
 				37A3AEE62A73B99E0084542F /* RandomDogViewModel.swift */,
 				376C66F52A73EBD00029824B /* RandomJokeViewModel.swift */,
@@ -69,6 +68,7 @@
 				37A3AEE82A73C7150084542F /* CatFact.swift */,
 				37A3AEE22A73A79B0084542F /* DogImage.swift */,
 				376C66F12A73EB520029824B /* Joke.swift */,
+				370C7A6D2A740A7E0053572A /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,11 +195,11 @@
 				37A3AEE32A73A79B0084542F /* DogImage.swift in Sources */,
 				37A3AEEB2A73C9800084542F /* RandomCatView.swift in Sources */,
 				37A3AEE92A73C7150084542F /* CatFact.swift in Sources */,
-				37A3AEE02A73A31A0084542F /* MainViewModel.swift in Sources */,
 				37A3AEED2A73C9970084542F /* RandomCatViewModel.swift in Sources */,
 				376C66F62A73EBD00029824B /* RandomJokeViewModel.swift in Sources */,
 				376C66F22A73EB520029824B /* Joke.swift in Sources */,
 				376C66F42A73EBB70029824B /* RandomJokeView.swift in Sources */,
+				370C7A6E2A740A7E0053572A /* User.swift in Sources */,
 				37DC16932A73960F00319EB8 /* RandomAppApp.swift in Sources */,
 				37A3AEE72A73B99E0084542F /* RandomDogViewModel.swift in Sources */,
 				37A3AEE52A73B9690084542F /* RandomDogView.swift in Sources */,

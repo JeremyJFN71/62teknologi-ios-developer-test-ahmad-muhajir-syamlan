@@ -7,6 +7,7 @@
 
 import Foundation
 
-final class MainViewModel: ObservableObject {
-    
+struct DogImage: Codable, Hashable {
+    let message: String
+    let status: String
 }
