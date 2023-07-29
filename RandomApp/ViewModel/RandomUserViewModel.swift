@@ -49,7 +49,7 @@ final class RandomUserViewModel: ObservableObject {
                     self.isLoading = false
                 }
             } catch let error {
-                print("Error: \(error.localizedDescription)")
+                print(error.localizedDescription)
             }
         }
         

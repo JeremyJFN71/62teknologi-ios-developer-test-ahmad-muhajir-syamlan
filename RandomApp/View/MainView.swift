@@ -76,11 +76,11 @@ struct OptionView: View {
             }
             
             HStack {
-                NavigationLink(destination: RandomDogView()) {
+                NavigationLink(destination: PredictAgeView()) {
                     ButtonView(text: "Predict Age")
                 }
                 
-                NavigationLink(destination: RandomDogView()) {
+                NavigationLink(destination: PredictGenderView()) {
                     ButtonView(text: "Predict Gender")
                 }
             }
@@ -88,7 +88,7 @@ struct OptionView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
     }
