@@ -7,8 +7,14 @@
 
 import Foundation
 
-// MARK: - User
+// Mark: - User
 struct User: Codable {
+    let picture, fullName, gender, email, phone, cell: String
+    var address: String?
+}
+
+// MARK: - Welcome
+struct Welcome: Codable {
     let results: [Result]
     let info: Info
 }
@@ -34,34 +40,55 @@ struct Result: Codable {
     let nat: String
 }
 
-// MARK: - Dob
-struct Dob: Codable {
-    let date: String
-    let age: Int
-}
-
-// MARK: - ID
-struct ID: Codable {
-    let name, value: String
+// MARK: - Name
+struct Name: Codable {
+    let title, first, last: String
 }
 
 // MARK: - Location
 struct Location: Codable {
     let street: Street
-    let city, state, country, postcode: String
+    let city, state, country: String
+    let postcode: PostCodeValue    // <-- Int or String
     let coordinates: Coordinates
     let timezone: Timezone
-}
+    
+    enum PostCodeValue: Codable {
+        case string(String)
+        case int(Int)
 
-// MARK: - Coordinates
-struct Coordinates: Codable {
-    let latitude, longitude: String
+        init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            if let stringValue = try? container.decode(String.self) {
+                self = .string(stringValue)
+            } else if let intValue = try? container.decode(Int.self) {
+                self = .int(intValue)
+            } else {
+                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid postCode value")
+            }
+        }
+
+        func encode(to encoder: Encoder) throws {
+            var container = encoder.singleValueContainer()
+            switch self {
+            case .string(let value):
+                try container.encode(value)
+            case .int(let value):
+                try container.encode(value)
+            }
+        }
+    }
 }
 
 // MARK: - Street
 struct Street: Codable {
     let number: Int
     let name: String
+}
+
+// MARK: - Coordinates
+struct Coordinates: Codable {
+    let latitude, longitude: String
 }
 
 // MARK: - Timezone
@@ -75,13 +102,19 @@ struct Login: Codable {
     let md5, sha1, sha256: String
 }
 
-// MARK: - Name
-struct Name: Codable {
-    let title, first, last: String
+// MARK: - Dob
+struct Dob: Codable {
+    let date: String
+    let age: Int
+}
+
+// MARK: - ID
+struct ID: Codable {
+    let name: String
+    let value: String?
 }
 
 // MARK: - Picture
 struct Picture: Codable {
     let large, medium, thumbnail: String
 }
-

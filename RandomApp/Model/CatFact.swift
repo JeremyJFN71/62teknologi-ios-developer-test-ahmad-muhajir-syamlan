@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CatFact: Codable, Hashable {
+struct CatFact: Codable {
     let fact: String
     let length: Int
 }
