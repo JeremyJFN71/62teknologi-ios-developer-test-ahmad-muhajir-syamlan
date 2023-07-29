@@ -70,7 +70,7 @@ struct OptionView: View {
                     ButtonView(text: "Jokes")
                 }
                 
-                NavigationLink(destination: RandomDogView()) {
+                NavigationLink(destination: RandomUserView()) {
                     ButtonView(text: "Users")
                 }
             }

@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - Welcome
-struct Welcome: Codable {
+// MARK: - User
+struct User: Codable {
     let results: [Result]
     let info: Info
 }

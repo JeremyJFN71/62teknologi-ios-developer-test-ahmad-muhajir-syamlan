@@ -1,17 +1,17 @@
 //
-//  RandomDogViewModel.swift
+//  RandomUserViewModel.swift
 //  RandomApp
 //
-//  Created by Tokio Marine on 28/07/23.
+//  Created by Tokio Marine on 29/07/23.
 //
 
 import Foundation
 
-final class RandomDogViewModel: ObservableObject {
-    @Published var dogImage: DogImage?
+final class RandomUserViewModel: ObservableObject {
+    @Published var user: User?
     @Published var isLoading = false
     
-    func fetchDog() {
+    func fetchUser() {
         isLoading = true
         let url = URL(string: "https://dog.ceo/api/breeds/image/random")!
         
@@ -27,10 +27,10 @@ final class RandomDogViewModel: ObservableObject {
             }
             
             do {
-                let dogImage = try JSONDecoder().decode(DogImage.self, from: data)
+                let user = try JSONDecoder().decode(User.self, from: data)
                 
                 DispatchQueue.main.async {
-                    self.dogImage = dogImage
+                    self.user = user
                     self.isLoading = false
                 }
             } catch let error {
@@ -41,4 +41,3 @@ final class RandomDogViewModel: ObservableObject {
         task.resume()
     }
 }
-

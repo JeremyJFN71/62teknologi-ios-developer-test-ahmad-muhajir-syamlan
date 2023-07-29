@@ -13,10 +13,7 @@ final class RandomCatViewModel: ObservableObject {
     
     func fetchCat() {
         isLoading = true
-        guard let url = URL(string: "https://catfact.ninja/fact") else {
-            print("Error: Invalid URL")
-            return
-        }
+        let url = URL(string: "https://catfact.ninja/fact")!
         
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {

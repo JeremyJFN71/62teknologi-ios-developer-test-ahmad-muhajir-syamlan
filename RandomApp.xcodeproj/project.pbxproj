@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		370C7A6E2A740A7E0053572A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370C7A6D2A740A7E0053572A /* User.swift */; };
+		373661D22A7502BA006BEC64 /* RandomUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373661D12A7502BA006BEC64 /* RandomUserView.swift */; };
+		373661D42A750393006BEC64 /* RandomUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373661D32A750393006BEC64 /* RandomUserViewModel.swift */; };
 		376C66F22A73EB520029824B /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C66F12A73EB520029824B /* Joke.swift */; };
 		376C66F42A73EBB70029824B /* RandomJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C66F32A73EBB70029824B /* RandomJokeView.swift */; };
 		376C66F62A73EBD00029824B /* RandomJokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C66F52A73EBD00029824B /* RandomJokeViewModel.swift */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		370C7A6D2A740A7E0053572A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		373661D12A7502BA006BEC64 /* RandomUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserView.swift; sourceTree = "<group>"; };
+		373661D32A750393006BEC64 /* RandomUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserViewModel.swift; sourceTree = "<group>"; };
 		376C66F12A73EB520029824B /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		376C66F32A73EBB70029824B /* RandomJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeView.swift; sourceTree = "<group>"; };
 		376C66F52A73EBD00029824B /* RandomJokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeViewModel.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 				37A3AEEC2A73C9970084542F /* RandomCatViewModel.swift */,
 				37A3AEE62A73B99E0084542F /* RandomDogViewModel.swift */,
 				376C66F52A73EBD00029824B /* RandomJokeViewModel.swift */,
+				373661D32A750393006BEC64 /* RandomUserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 				37A3AEEA2A73C9800084542F /* RandomCatView.swift */,
 				37A3AEE42A73B9690084542F /* RandomDogView.swift */,
 				376C66F32A73EBB70029824B /* RandomJokeView.swift */,
+				373661D12A7502BA006BEC64 /* RandomUserView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,11 +201,13 @@
 				37A3AEE32A73A79B0084542F /* DogImage.swift in Sources */,
 				37A3AEEB2A73C9800084542F /* RandomCatView.swift in Sources */,
 				37A3AEE92A73C7150084542F /* CatFact.swift in Sources */,
+				373661D42A750393006BEC64 /* RandomUserViewModel.swift in Sources */,
 				37A3AEED2A73C9970084542F /* RandomCatViewModel.swift in Sources */,
 				376C66F62A73EBD00029824B /* RandomJokeViewModel.swift in Sources */,
 				376C66F22A73EB520029824B /* Joke.swift in Sources */,
 				376C66F42A73EBB70029824B /* RandomJokeView.swift in Sources */,
 				370C7A6E2A740A7E0053572A /* User.swift in Sources */,
+				373661D22A7502BA006BEC64 /* RandomUserView.swift in Sources */,
 				37DC16932A73960F00319EB8 /* RandomAppApp.swift in Sources */,
 				37A3AEE72A73B99E0084542F /* RandomDogViewModel.swift in Sources */,
 				37A3AEE52A73B9690084542F /* RandomDogView.swift in Sources */,
