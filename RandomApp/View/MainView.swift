@@ -12,7 +12,8 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                BackgroundView()
+                LinearGradient(colors: [.blue, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .ignoresSafeArea()
                 
                 VStack {
                     Spacer()
