@@ -10,7 +10,7 @@ import Foundation
 final class PredictAgeViewModel: ObservableObject {
     @Published var predictedAge: PredictedAge?
     @Published var name = ""
-    @Published var message = "Input Name"
+    @Published var message = "Input name below"
     @Published var isLoading = false
     
     func fetchPredictAge(){

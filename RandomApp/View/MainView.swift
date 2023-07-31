@@ -12,8 +12,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(colors: [.blue, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
-                    .ignoresSafeArea()
+                BackgroundView()
                 
                 VStack {
                     Spacer()
@@ -44,9 +43,9 @@ struct ButtonMainView: View {
     var body: some View {
         Text(text)
             .fontWeight(.semibold)
-            .padding(.vertical, 15)
+            .padding(.vertical, 17)
             .foregroundColor(.white)
-            .frame(width: 140)
+            .frame(width: 150)
             .background(.brown)
             .cornerRadius(30)
     }
@@ -54,7 +53,7 @@ struct ButtonMainView: View {
 
 struct OptionView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 13) {
             HStack {
                 NavigationLink(destination: RandomCatView()) {
                     ButtonMainView(text: "Cat Facts")

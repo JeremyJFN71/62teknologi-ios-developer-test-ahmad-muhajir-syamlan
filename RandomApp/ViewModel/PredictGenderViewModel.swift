@@ -11,7 +11,7 @@ final class PredictGenderViewModel: ObservableObject {
     @Published var predictedGender: PredictedGender?
     @Published var name = ""
     @Published var probability: Int = 0
-    @Published var message = "Input Name"
+    @Published var message = "Input name below"
     
     @Published var isLoading = false
     

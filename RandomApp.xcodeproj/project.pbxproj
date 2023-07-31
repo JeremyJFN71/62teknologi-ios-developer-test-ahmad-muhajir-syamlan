@@ -26,6 +26,7 @@
 		37A3AEE92A73C7150084542F /* CatFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEE82A73C7150084542F /* CatFact.swift */; };
 		37A3AEEB2A73C9800084542F /* RandomCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEEA2A73C9800084542F /* RandomCatView.swift */; };
 		37A3AEED2A73C9970084542F /* RandomCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3AEEC2A73C9970084542F /* RandomCatViewModel.swift */; };
+		37C13D6E2A778E8400E1936B /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C13D6D2A778E8400E1936B /* BackgroundView.swift */; };
 		37DC16932A73960F00319EB8 /* RandomAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DC16922A73960F00319EB8 /* RandomAppApp.swift */; };
 		37DC16952A73960F00319EB8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DC16942A73960F00319EB8 /* MainView.swift */; };
 		37DC16972A73961200319EB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37DC16962A73961200319EB8 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		37A3AEE82A73C7150084542F /* CatFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFact.swift; sourceTree = "<group>"; };
 		37A3AEEA2A73C9800084542F /* RandomCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCatView.swift; sourceTree = "<group>"; };
 		37A3AEEC2A73C9970084542F /* RandomCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCatViewModel.swift; sourceTree = "<group>"; };
+		37C13D6D2A778E8400E1936B /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		37DC168F2A73960F00319EB8 /* RandomApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DC16922A73960F00319EB8 /* RandomAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAppApp.swift; sourceTree = "<group>"; };
 		37DC16942A73960F00319EB8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				373E822C2A7632DC0068A73C /* ButtonView.swift */,
+				37C13D6D2A778E8400E1936B /* BackgroundView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			files = (
 				37DC16952A73960F00319EB8 /* MainView.swift in Sources */,
 				37A3AEE32A73A79B0084542F /* DogImage.swift in Sources */,
+				37C13D6E2A778E8400E1936B /* BackgroundView.swift in Sources */,
 				3740C7852A75626B00BB864A /* PredictAgeView.swift in Sources */,
 				37A3AEEB2A73C9800084542F /* RandomCatView.swift in Sources */,
 				37A3AEE92A73C7150084542F /* CatFact.swift in Sources */,

@@ -17,11 +17,11 @@ struct ButtonView: View {
             action()
         } label: {
             Label(text, systemImage: image)
+                .fontWeight(.semibold)
                 .padding(.vertical, 12)
-                .padding(.horizontal, 20)
-                .frame(width: .infinity)
+                .padding(.horizontal, 30)
                 .foregroundColor(.white)
-                .background(.blue)
+                .background(.brown)
                 .cornerRadius(15)
         }
     }
