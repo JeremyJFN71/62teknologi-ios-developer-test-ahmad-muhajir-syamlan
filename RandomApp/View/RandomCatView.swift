@@ -20,15 +20,8 @@ struct RandomCatView: View {
             
             Spacer()
             
-            Button {
+            ButtonView(text: "Random Cat Fact", image: "dice.fill") {
                 viewModel.fetchCat()
-            } label: {
-                Text("Random Cat Fact")
-                    .padding(12)
-                    .foregroundColor(.white)
-                    .frame(width: 250)
-                    .background(.red)
-                    .cornerRadius(10)
             }.disabled(viewModel.isLoading)
         }
             .navigationTitle("Cat Fact")

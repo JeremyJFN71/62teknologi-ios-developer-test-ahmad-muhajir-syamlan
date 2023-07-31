@@ -8,34 +8,45 @@
 import Foundation
 
 final class PredictGenderViewModel: ObservableObject {
-    @Published var predictedAge: PredictedGender?
+    @Published var predictedGender: PredictedGender?
     @Published var name = ""
+    @Published var probability: Int = 0
+    @Published var message = "Input Name"
+    
     @Published var isLoading = false
     
-    func fetchPredictedAge(){
+    func fetchPredictGender(){
         isLoading = true
-
-        guard let url = URL(string: "https://api.genderize.io?name=\(name)") else {
-            print("Error: Invalid URL")
-            return
-        }
         
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "api.genderize.io"
+        components.queryItems = [
+            URLQueryItem(name: "name", value: name)
+        ]
+        
+        let task = URLSession.shared.dataTask(with: components.url!) { data, _, error in
             if let error = error {
                 print(error.localizedDescription)
+                self.isLoading = false
                 return
             }
 
             guard let data = data else {
                 print("Error: Empty data")
+                self.isLoading = false
                 return
             }
             
             do {
-                let predictedAge = try JSONDecoder().decode(PredictedGender.self, from: data)
+                let predictedGender = try JSONDecoder().decode(PredictedGender.self, from: data)
                 
                 DispatchQueue.main.async {
-                    self.predictedAge = predictedAge
+                    self.predictedGender = predictedGender
+                    self.probability = Int(predictedGender.probability * 100)
+                    if predictedGender.count == 0 {
+                        self.message = "Cant Predict"
+                    }
                     self.isLoading = false
                 }
             } catch let error {

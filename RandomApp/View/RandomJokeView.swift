@@ -45,15 +45,8 @@ struct RandomJokeView: View {
             
             Spacer()
             
-            Button {
+            ButtonView(text: "Random Joke", image: "dice.fill") {
                 viewModel.fetchJoke()
-            } label: {
-                Text("Random Joke")
-                    .padding(12)
-                    .foregroundColor(.white)
-                    .frame(width: 250)
-                    .background(.red)
-                    .cornerRadius(10)
             }.disabled(viewModel.isLoading)
         }
             .navigationTitle("Joke")

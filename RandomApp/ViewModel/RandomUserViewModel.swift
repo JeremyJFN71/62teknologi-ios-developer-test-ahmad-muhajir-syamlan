@@ -9,20 +9,40 @@ import Foundation
 
 final class RandomUserViewModel: ObservableObject {
     @Published var user: User?
+    @Published var selectedGender: gender = .all
     @Published var isLoading = false
+    
+    enum gender: String, CaseIterable {
+        case all = "All"
+        case male = "Male"
+        case female = "Female"
+    }
     
     func fetchUser() {
         isLoading = true
-        let url = URL(string: "https://randomuser.me/api")!
+        
+        var endpoint = "https://randomuser.me/api"
+        
+        if selectedGender != .all {
+            endpoint = "https://randomuser.me/api?gender=\(selectedGender)"
+        }
+
+        guard let url = URL(string: endpoint) else {
+            print("Error: Invalid URL")
+            self.isLoading = false
+            return
+        }
         
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 print(error.localizedDescription)
+                self.isLoading = false
                 return
             }
 
             guard let data = data else {
                 print("Error: Empty data")
+                self.isLoading = false
                 return
             }
             

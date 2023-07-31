@@ -28,15 +28,8 @@ struct RandomDogView: View {
             
             Spacer()
             
-            Button {
+            ButtonView(text: "Random Dog Image", image: "dice.fill") {
                 viewModel.fetchDog()
-            } label: {
-                Text("Random Dog")
-                    .padding(12)
-                    .foregroundColor(.white)
-                    .frame(width: 250)
-                    .background(.red)
-                    .cornerRadius(10)
             }.disabled(viewModel.isLoading)
         }
             .navigationTitle("Dog Image")

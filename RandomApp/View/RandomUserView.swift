@@ -12,6 +12,14 @@ struct RandomUserView: View {
 
     var body: some View {
         VStack {
+            Picker("Choose Type", selection: $viewModel.selectedGender) {
+                ForEach(RandomUserViewModel.gender.allCases, id: \.self) {
+                    Text($0.rawValue)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .unredacted()
+
             VStack(spacing: 15) {
                 AsyncImage(url: URL(string: viewModel.user?.picture ?? "")) { image in
                     image
@@ -48,17 +56,9 @@ struct RandomUserView: View {
             
             Spacer()
 
-            Button {
+            ButtonView(text: "Random User", image: "dice.fill") {
                 viewModel.fetchUser()
-            } label: {
-                Text("Random User")
-                    .padding(12)
-                    .foregroundColor(.white)
-                    .frame(width: 250)
-                    .background(.red)
-                    .cornerRadius(10)
-            }
-                .disabled(viewModel.isLoading)
+            }.disabled(viewModel.isLoading)
 
         }
             .navigationTitle("User")

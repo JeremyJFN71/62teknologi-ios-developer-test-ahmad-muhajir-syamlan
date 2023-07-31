@@ -10,24 +10,29 @@ import Foundation
 final class PredictAgeViewModel: ObservableObject {
     @Published var predictedAge: PredictedAge?
     @Published var name = ""
+    @Published var message = "Input Name"
     @Published var isLoading = false
     
-    func fetchPredictedAge(){
+    func fetchPredictAge(){
         isLoading = true
-
-        guard let url = URL(string: "https://api.agify.io?name=\(name)") else {
-            print("Error: Invalid URL")
-            return
-        }
         
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "api.agify.io"
+        components.queryItems = [
+            URLQueryItem(name: "name", value: name)
+        ]
+        
+        let task = URLSession.shared.dataTask(with: components.url!) { data, _, error in
             if let error = error {
                 print(error.localizedDescription)
+                self.isLoading = false
                 return
             }
 
             guard let data = data else {
                 print("Error: Empty data")
+                self.isLoading = false
                 return
             }
             
@@ -36,6 +41,9 @@ final class PredictAgeViewModel: ObservableObject {
                 
                 DispatchQueue.main.async {
                     self.predictedAge = predictedAge
+                    if predictedAge.count == 0 {
+                        self.message = "Cant Predict"
+                    }
                     self.isLoading = false
                 }
             } catch let error {

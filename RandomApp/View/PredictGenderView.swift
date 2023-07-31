@@ -11,7 +11,27 @@ struct PredictGenderView: View {
     @StateObject private var viewModel = PredictGenderViewModel()
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if let gender = viewModel.predictedGender?.gender {
+                Text("\(viewModel.probability)% you are")
+                Text(gender.capitalized)
+                    .font(.title)
+                    .fontWeight(.bold)
+            } else {
+                Text(viewModel.message)
+            }
+
+            Form {
+                TextField("Name", text: $viewModel.name)
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled()
+                
+                ButtonView(text: "Predict Gender", image: "dice.fill") {
+                    viewModel.fetchPredictGender()
+                }.disabled(viewModel.isLoading)
+            }
+        }.navigationTitle("Predict Gender")
+            .redacted(reason: viewModel.isLoading ? .placeholder : [])
     }
 }
 

@@ -10,5 +10,5 @@ import Foundation
 struct PredictedAge: Codable {
     let count: Int
     let name: String
-    let Age: Int?
+    var age: Int?
 }

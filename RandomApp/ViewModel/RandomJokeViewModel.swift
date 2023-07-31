@@ -22,6 +22,7 @@ final class RandomJokeViewModel: ObservableObject {
     func fetchJoke() {
         isLoading = true
         punchline = nil
+
         var endpoint = "https://official-joke-api.appspot.com/jokes/random"
 
         if selectedType != .all {
@@ -30,17 +31,20 @@ final class RandomJokeViewModel: ObservableObject {
         
         guard let url = URL(string: endpoint) else {
             print("Error: Invalid URL")
+            self.isLoading = false
             return
         }
 
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 print(error.localizedDescription)
+                self.isLoading = false
                 return
             }
 
             guard let data = data else {
                 print("Error: Empty data")
+                self.isLoading = false
                 return
             }
 

@@ -11,7 +11,25 @@ struct PredictAgeView: View {
     @StateObject private var viewModel = PredictAgeViewModel()
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if let age = viewModel.predictedAge?.age {
+                Text("Your Age:")
+                Text("\(age)")
+            } else {
+                Text(viewModel.message)
+            }
+            
+            Form {
+                TextField("Name", text: $viewModel.name)
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled()
+                
+                ButtonView(text: "Predict", image: "dice.fill") {
+                    viewModel.fetchPredictAge()
+                }.disabled(viewModel.isLoading)
+            }
+        }.navigationTitle("Predict Age")
+            .redacted(reason: viewModel.isLoading ? .placeholder : [])
     }
 }
 

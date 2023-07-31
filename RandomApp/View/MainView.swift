@@ -38,7 +38,7 @@ struct MainView: View {
     }
 }
 
-struct ButtonView: View {
+struct ButtonMainView: View {
     var text: String
 
     var body: some View {
@@ -57,31 +57,31 @@ struct OptionView: View {
         VStack {
             HStack {
                 NavigationLink(destination: RandomCatView()) {
-                    ButtonView(text: "Cat Facts")
+                    ButtonMainView(text: "Cat Facts")
                 }
                 
                 NavigationLink(destination: RandomDogView()) {
-                    ButtonView(text: "Dog Images")
+                    ButtonMainView(text: "Dog Images")
                 }
             }
             
             HStack {
                 NavigationLink(destination: RandomJokeView()) {
-                    ButtonView(text: "Jokes")
+                    ButtonMainView(text: "Jokes")
                 }
                 
                 NavigationLink(destination: RandomUserView()) {
-                    ButtonView(text: "Users")
+                    ButtonMainView(text: "Users")
                 }
             }
             
             HStack {
                 NavigationLink(destination: PredictAgeView()) {
-                    ButtonView(text: "Predict Age")
+                    ButtonMainView(text: "Predict Age")
                 }
                 
                 NavigationLink(destination: PredictGenderView()) {
-                    ButtonView(text: "Predict Gender")
+                    ButtonMainView(text: "Predict Gender")
                 }
             }
         }

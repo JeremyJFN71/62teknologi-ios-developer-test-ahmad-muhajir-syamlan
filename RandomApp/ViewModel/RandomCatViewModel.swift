@@ -18,11 +18,13 @@ final class RandomCatViewModel: ObservableObject {
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 print(error.localizedDescription)
+                self.isLoading = false
                 return
             }
             
             guard let data = data else {
                 print("Error: Empty data")
+                self.isLoading = false
                 return
             }
             

@@ -8,8 +8,8 @@
 import Foundation
 
 struct PredictedGender: Codable {
-    let name: String
-    let gender: String
-    let Probability: Double
     let count: Int
+    let name: String
+    let gender: String?
+    let probability: Float
 }
