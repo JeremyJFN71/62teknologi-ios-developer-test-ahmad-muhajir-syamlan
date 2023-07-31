@@ -18,7 +18,7 @@ struct ButtonView: View {
         } label: {
             Label(text, systemImage: image)
                 .fontWeight(.semibold)
-                .padding(.vertical, 12)
+                .padding(.vertical, 14)
                 .padding(.horizontal, 30)
                 .foregroundColor(.white)
                 .background(.brown)

@@ -11,54 +11,60 @@ struct PredictAgeView: View {
     @StateObject private var viewModel = PredictAgeViewModel()
 
     var body: some View {
-        ZStack {
-            BackgroundView()
+        VStack(spacing: 15) {
+            NavigationBarView(title: "Predict Age")
+
+            Spacer()
             
-            VStack(spacing: 15) {
-                Spacer()
-                
-                Circle()
-                    .frame(width: 280)
-                    .foregroundColor(.brown)
-                    .overlay {
-                        if let age = viewModel.predictedAge?.age {
-                            VStack {
-                                Text("Your Age:")
-                                    .font(.system(size: 30, weight: .semibold, design: .default))
-                                    .foregroundColor(.white)
-                                Text(String(age))
-                                    .font(.system(size: 70, weight: .bold, design: .default))
-                                    .foregroundColor(.white)
-                            }
-                        } else {
-                            Text(viewModel.message)
-                                .font(.system(size: 40, weight: .bold, design: .default))
-                                .multilineTextAlignment(.center)
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 20)
-                        }
-                    }
-                
-                Spacer()
-                
-                Form {
+            if let age = viewModel.predictedAge?.age {
+                VStack {
+                    Text("Your Age:")
+                        .font(.system(size: 30, weight: .semibold, design: .default))
+                        .foregroundColor(.black)
+                    Text(String(age))
+                        .font(.system(size: 70, weight: .bold, design: .default))
+                        .foregroundColor(.black)
+                }
+            } else {
+                Text(viewModel.message)
+                    .font(.system(size: 28, weight: .bold, design: .default))
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 20)
+            }
+            
+            Spacer()
+            
+            Form {
+                HStack {
                     TextField("Name", text: $viewModel.name)
                         .autocapitalization(.none)
                         .autocorrectionDisabled()
+                        .fontWeight(.bold)
                         .padding(.vertical, 12)
                         .padding(.horizontal)
-                        .frame(width: UIScreen.main.bounds.width - 50)
-                        .background(.white)
                         .cornerRadius(15)
-                }.formStyle(.columns)
-                
-                ButtonView(text: "Predict", image: "dice.fill") {
-                    viewModel.fetchPredictAge()
-                }.disabled(viewModel.isLoading)
-            }
+                        .overlay(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(.black, lineWidth: 4)
+                        )
+
+                    Button {
+                        viewModel.fetchPredictAge()
+                    } label: {
+                        Image(systemName: "dice.fill")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding(14)
+                            .background(.brown)
+                            .cornerRadius(15)
+                    }.disabled(viewModel.isLoading)
+                }.padding()
+            }.formStyle(.columns)
+            
         }
-            .navigationTitle("Predict Age")
-            .redacted(reason: viewModel.isLoading ? .placeholder : [])
+        .toolbar(.hidden)
+        .redacted(reason: viewModel.isLoading ? .placeholder : [])
     }
 }
 

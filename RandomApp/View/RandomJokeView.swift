@@ -11,51 +11,64 @@ struct RandomJokeView: View {
     @StateObject private var viewModel = RandomJokeViewModel()
 
     var body: some View {
-        ZStack {
-            BackgroundView()
-            
-            VStack {
-                HStack {
-                    Text("Choose Joke Type")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .padding()
-                    Spacer()
-                }.unredacted()
-                
-                Picker("Choose Type", selection: $viewModel.selectedType) {
-                    ForEach(RandomJokeViewModel.JokesType.allCases, id: \.self) {
-                        Text($0.rawValue)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                .padding(.top, -15)
-                .unredacted()
-                .onChange(of: viewModel.selectedType) { _ in
-                    viewModel.joke = nil
-                    viewModel.punchline = nil
-                }
-            
-                Spacer()
+        VStack {
+            NavigationBarView(title: "Jokes")
 
+            HStack {
+                Text("Choose Joke Type")
+                    .font(.title)
+                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+                    .padding()
+                Spacer()
+            }.unredacted()
+            
+            Picker("Choose Type", selection: $viewModel.selectedType) {
+                ForEach(RandomJokeViewModel.JokesType.allCases, id: \.self) {
+                    Text($0.rawValue)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding()
+            .padding(.top, -15)
+            .unredacted()
+            .onChange(of: viewModel.selectedType) { _ in
+                viewModel.joke = nil
+            }
+        
+            Spacer()
+
+            if viewModel.joke != nil {
                 Text(viewModel.joke?.setup ?? "")
                     .padding()
-                    .multilineTextAlignment(.center)
-                Text(viewModel.punchline ?? "")
-                    .font(.system(size: 20, weight: .semibold, design: .default))
+                    .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                 
-                Spacer()
-                
-                ButtonView(text: "Random Joke", image: "dice.fill") {
-                    viewModel.fetchJoke()
-                }.disabled(viewModel.isLoading)
+                if viewModel.tapped {
+                    Text(viewModel.joke?.punchline ?? "")
+                        .font(.system(size: 25, weight: .heavy, design: .default))
+                        .multilineTextAlignment(.center)
+                } else {
+                    Button {
+                        viewModel.tapped = true
+                    } label: {
+                        Text("-> Tap <-")
+                            .padding()
+                    }
+                }
             }
+            
+            Spacer()
+            
+            ButtonView(text: "Random Joke", image: "dice.fill") {
+                viewModel.fetchJoke()
+            }.disabled(viewModel.isLoading)
         }
-            .navigationTitle("Jokes")
-            .redacted(reason: viewModel.isLoading ? .placeholder : [])
+        .toolbar(.hidden)
+        .redacted(reason: viewModel.isLoading ? .placeholder : [])
+        .onAppear {
+            viewModel.fetchJoke()
+        }
     }
 }
 

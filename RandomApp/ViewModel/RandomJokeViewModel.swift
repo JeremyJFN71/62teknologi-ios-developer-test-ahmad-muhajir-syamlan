@@ -9,8 +9,9 @@ import Foundation
 
 final class RandomJokeViewModel: ObservableObject {
     @Published var joke: Joke?
-    @Published var punchline: String?
     @Published var selectedType: JokesType = .all
+    @Published var tapped = false
+    
     @Published var isLoading = false
 
     enum JokesType: String, CaseIterable {
@@ -20,8 +21,8 @@ final class RandomJokeViewModel: ObservableObject {
     }
     
     func fetchJoke() {
+        tapped = false
         isLoading = true
-        punchline = nil
 
         var endpoint = "https://official-joke-api.appspot.com/jokes/random"
 
@@ -59,10 +60,6 @@ final class RandomJokeViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.joke = joke
                     self.isLoading = false
-                }
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.punchline = joke.punchline
                 }
             } catch let error {
                 print(error.localizedDescription)

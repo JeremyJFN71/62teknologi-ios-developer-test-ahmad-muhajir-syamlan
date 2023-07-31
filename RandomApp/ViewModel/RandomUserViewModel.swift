@@ -50,7 +50,6 @@ final class RandomUserViewModel: ObservableObject {
                 let user = try JSONDecoder().decode(Welcome.self, from: data)
                 
                 DispatchQueue.main.async {
-                    print(user)
                     let result = user.results[0]
                     self.user = User(picture: result.picture.large,
                                      fullName: "\(result.name.title). \(result.name.first) \(result.name.last)",

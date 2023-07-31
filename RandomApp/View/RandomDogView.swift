@@ -11,37 +11,40 @@ struct RandomDogView: View {
     @StateObject private var viewModel = RandomDogViewModel()
 
     var body: some View {
-        ZStack {
-            BackgroundView()
+        VStack(spacing: 40) {
+            NavigationBarView(title: "Dog Images")
             
-            VStack(spacing: 40) {
-                Spacer()
+            Spacer()
 
-                AsyncImage(url: URL(string: viewModel.dogImage?.message ?? "")) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.main.bounds.width - 50)
-                        .cornerRadius(20)
-                } placeholder: {
-                    Rectangle()
-                        .foregroundColor(.secondary)
-                        .frame(width: UIScreen.main.bounds.width - 50, height: 250)
-                        .cornerRadius(20)
-                }
-                
-                Spacer()
-                
-                ButtonView(text: "Random Dog Image", image: "dice.fill") {
-                    viewModel.fetchDog()
-                }.disabled(viewModel.isLoading)
+            AsyncImage(url: URL(string: viewModel.dogImage?.message ?? "")) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width - 50)
+                    .cornerRadius(20)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(.black, lineWidth: 4)
+                    )
+                    
+            } placeholder: {
+                Rectangle()
+                    .foregroundColor(.secondary)
+                    .frame(width: UIScreen.main.bounds.width - 50, height: 250)
+                    .cornerRadius(20)
             }
-        }
-            .navigationTitle("Dog Images")
-            .redacted(reason: viewModel.isLoading ? .placeholder : [])
-            .onAppear {
+            
+            Spacer()
+            
+            ButtonView(text: "Random Dog Image", image: "dice.fill") {
                 viewModel.fetchDog()
-            }
+            }.disabled(viewModel.isLoading)
+        }
+        .toolbar(.hidden)
+        .redacted(reason: viewModel.isLoading ? .placeholder : [])
+        .onAppear {
+            viewModel.fetchDog()
+        }
     }
 }
 

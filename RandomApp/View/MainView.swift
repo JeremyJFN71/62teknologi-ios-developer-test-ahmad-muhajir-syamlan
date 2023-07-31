@@ -70,7 +70,7 @@ struct OptionView: View {
                 }
                 
                 NavigationLink(destination: RandomUserView()) {
-                    ButtonMainView(text: "Users")
+                    ButtonMainView(text: "Fake Users")
                 }
             }
             
