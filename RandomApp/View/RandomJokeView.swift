@@ -17,7 +17,6 @@ struct RandomJokeView: View {
             HStack {
                 Text("Choose Joke Type")
                     .font(.title)
-                    .foregroundColor(.black)
                     .fontWeight(.bold)
                     .padding()
                 Spacer()

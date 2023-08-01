@@ -17,14 +17,13 @@ struct NavigationBarView: View {
                 dismiss()
             } label: {
                 Label("Back", systemImage: "arrowshape.turn.up.left.fill")
-                    .foregroundColor(.black)
+                    .foregroundColor(.primary)
                     .bold()
                     .padding()
             }.frame(width: UIScreen.main.bounds.width, height: 50, alignment: .leading)
 
             Text(title.capitalized)
                 .fontWeight(.bold)
-                .foregroundColor(.black)
                 .frame(width: UIScreen.main.bounds.width, height: 50, alignment: .center)
         }
         .unredacted()

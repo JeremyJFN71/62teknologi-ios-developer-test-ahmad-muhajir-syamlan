@@ -24,7 +24,7 @@ struct RandomDogView: View {
                     .cornerRadius(20)
                     .overlay(
                             RoundedRectangle(cornerRadius: 20)
-                                .stroke(.black, lineWidth: 4)
+                                .stroke(.primary, lineWidth: 4)
                     )
                     
             } placeholder: {

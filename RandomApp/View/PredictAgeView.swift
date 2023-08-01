@@ -20,16 +20,13 @@ struct PredictAgeView: View {
                 VStack {
                     Text("Your Age:")
                         .font(.system(size: 30, weight: .semibold, design: .default))
-                        .foregroundColor(.black)
                     Text(String(age))
                         .font(.system(size: 70, weight: .bold, design: .default))
-                        .foregroundColor(.black)
                 }
             } else {
                 Text(viewModel.message)
                     .font(.system(size: 28, weight: .bold, design: .default))
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.black)
                     .padding(.horizontal, 20)
             }
             
@@ -46,7 +43,7 @@ struct PredictAgeView: View {
                         .cornerRadius(15)
                         .overlay(
                                 RoundedRectangle(cornerRadius: 15)
-                                    .stroke(.black, lineWidth: 4)
+                                    .stroke(.primary, lineWidth: 4)
                         )
 
                     Button {

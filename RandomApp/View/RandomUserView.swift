@@ -32,7 +32,7 @@ struct RandomUserView: View {
                         .clipShape(Circle())
                         .overlay(
                                 Circle()
-                                    .stroke(.black, lineWidth: 4)
+                                    .stroke(.primary, lineWidth: 4)
                         )
                 } placeholder: {
                     Circle()
@@ -40,7 +40,7 @@ struct RandomUserView: View {
                         .frame(width: 200, height: 200)
                         .overlay(
                                 Circle()
-                                    .stroke(.black, lineWidth: 4)
+                                    .stroke(.primary, lineWidth: 4)
                         )
                 }
                 
@@ -74,15 +74,15 @@ struct RandomUserView: View {
                             .unredacted()
                         Text(viewModel.user?.address ?? "")
                     }
-                }
+                }.padding(.bottom)
             }
-                .padding()
-                .frame(maxWidth: 320, minHeight: 400, alignment: .top)
-                .cornerRadius(20)
-                .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(.black, lineWidth: 4)
-                )
+            .padding()
+            .frame(maxWidth: 320, minHeight: 400, alignment: .top)
+            .cornerRadius(20)
+            .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(.primary, lineWidth: 4)
+            )
 
             Spacer()
 
