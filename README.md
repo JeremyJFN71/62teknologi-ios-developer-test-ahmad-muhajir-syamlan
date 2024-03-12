@@ -5,7 +5,7 @@ An IOS App built with SwiftUI for 62 Technology Test
 
 ## Authors
 
-- [@jeremyjfn71](https://www.github.com/JeremyJFN71)
+- [@amuhajirs](https://www.github.com/amuhajirs)
 
 
 ## The API I use
